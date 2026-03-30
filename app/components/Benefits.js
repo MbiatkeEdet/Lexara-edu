@@ -79,7 +79,7 @@
 //     </section>
 //   );
 // }
-
+import Image from "next/image";
 export default function Benefits() {
   const benefits = [
     {
@@ -153,10 +153,12 @@ export default function Benefits() {
                 </h3>
               </div>
 
-              <img
+              <Image
                 src={benefit.image}
                 alt={benefit.group}
                 className="w-full h-60 object-contain mb-5 rounded-lg"
+                width={600}
+                height={400}
               />
 
               <ul className="space-y-3">

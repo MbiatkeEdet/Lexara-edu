@@ -35,16 +35,15 @@
 
 'use client'
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Header from "../components/Header";
 
 export default function SchoolProfile() {
-  const [profile, setProfile] = useState(null);
-  const [editMode, setEditMode] = useState(false);
-
-  useEffect(() => {
+  const [profile, setProfile] = useState(() => {
     const data = JSON.parse(localStorage.getItem("schoolProfile"));
-    setProfile(data);
-  }, []);
+    return data;
+  });
+  const [editMode, setEditMode] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -85,7 +84,7 @@ export default function SchoolProfile() {
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center">
               {profile.logo ? (
-                <img src={profile.logo} className="w-full h-full rounded-full object-cover" />
+                <Image src={profile.logo} alt="Logo" className="w-full h-full rounded-full object-cover" width={80} height={80} />
               ) : (
                 <span className="text-gray-500">Logo</span>
               )}

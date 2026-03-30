@@ -46,6 +46,7 @@
 // }
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -98,10 +99,12 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
             className="flex justify-center"
           >
-            <img
+            <Image
               src="/edu2.jpeg"
               alt="School management dashboard"
               className="w-full rounded-lg shadow-2xl border border-gray-200"
+              width={600}
+              height={400}
             />
           </motion.div>
 
